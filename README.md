@@ -3,7 +3,7 @@ A peer-to-peer, end-to-end encrypted messaging app powered by Tor.
 
 **This is a proof of concept only, so don't expect absolute privacy or security!**
 
-<img src="screenshot.png">
+<img src="screenshot.png" width="600">
 
 To run it, you'll need these dependencies:
 ```
