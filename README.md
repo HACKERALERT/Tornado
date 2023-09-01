@@ -21,7 +21,7 @@ You'll also need to have the [Tor Browser](https://www.torproject.org/download/)
 
 ## Caveats
 <ul>
-	<li>Due to the nature of P2P protocols, both the sender and the receiver must be online to exchange messages.</li>
+	<li>Both the sender and the receiver must be online to exchange messages in real time.</li>
 </ul>
 
 ## FAQ
