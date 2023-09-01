@@ -353,5 +353,5 @@ if __name__=="__main__":
 	window = MainWindow()
 	qapp.exec()
 	if myaddr is not None: window.backup()
-	controller.remove_ephemeral_hidden_service(myaddr)
+	if controller is not None: controller.remove_ephemeral_hidden_service(myaddr)
 	exit()
