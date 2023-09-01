@@ -1,5 +1,5 @@
 # Tornado
-A peer-to-peer, end-to-end encrypted messaging app powered by Tor.
+A peer-to-peer, end-to-end encrypted messaging app powered by Tor's hidden services.
 
 **This is a proof of concept only, so don't expect absolute privacy or security!**
 
