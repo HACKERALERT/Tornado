@@ -29,7 +29,7 @@ You'll also need to have the [Tor Browser](https://www.torproject.org/download/)
 It typically means that the recipient has gone offline or closed Tornado, and their endpoint is not accessible to you. Don't worry though, as Tornado will resend your messages as soon as the recipient comes online again.
 
 ### Tor is running but Tornado doesn't think so?
-Your Tor settings are likely misconfigured. If you aren't using the Tor Browser, you will need to tell Tor to use port 9150 for SOCKS and port 9151 for the Control Port.
+Your Tor settings are likely misconfigured. If you aren't using the Tor Browser, you will need to tell your Tor client to use port 9150 for the SOCKS proxy and port 9151 for the Control Port.
 
 ## How It Works
 At the core of Tornado is Tor's hidden service feature, which allows anyone to host a "publicly" accessible server without opening ports or firewalls. When you launch Tornado, it starts a local HTTP server and a hidden service that points to it. The address of the hidden service is your identity. When you message someone by their identity, Tornado sends an HTTP request with the message to their hidden service, which in turn forwards it to their local HTTP server. From there, the message is received by Tornado and shown in the application appropriately. While this provides privacy and security, it has one inherent issue, which is that if the recipient goes offline or closes Tornado, the hidden services goes down as well. To ensure that messages are delivered once the recipient comes online again, Tornado will periodically try to resend any unsent messages. Although not perfect, this system is about as good as it can get without requiring centralized components and thereby defeating the whole purpose of the software.
