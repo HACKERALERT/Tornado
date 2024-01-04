@@ -32,7 +32,7 @@ It typically means that the recipient has gone offline or closed Tornado, and th
 Your Tor settings are likely misconfigured. If you aren't using the Tor Browser, you will need to tell your Tor client to use port 9150 for the SOCKS proxy and port 9151 for the Control Port. Alternatively, you can change port 9150 to 9050 and port 9151 to 9051 in the code, which will work for typical Tor services.
 
 ### How do I change my identity?
-To change or delete your identity, simple delete the `.tornado` folder in your home directory. This will permanently delete your identity, contacts, and messages, and your existing contacts will no longer be able to message you. The next time you launch Tornado, a new identity will created for you and you can start fresh again.
+To change or delete your identity, simply delete the `.tornado` folder in your home directory. This will permanently delete your identity, contacts, and messages, and your existing contacts will no longer be able to message you. The next time you launch Tornado, a new identity will created for you and you can start fresh again.
 
 ### How do I transfer my identity and messages to a new device?
 Just copy the `.tornado` folder in your home directory to your home directory on your new computer. Tornado will automatically use your old identity and data when you run it. Make sure to only run your identity on one device, though. If you're running two instances of the same identity, it would be like having two phones with the same number... which one should get the calls? Regardless of the answer, just don't do it.
