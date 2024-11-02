@@ -8,7 +8,7 @@ from socketserver import TCPServer
 from gevent.pywsgi import WSGIServer
 from threading import Thread
 from requests import get,post
-from datetime import datetime
+from datetime import datetime, timezone
 from time import sleep
 from os.path import expanduser,exists
 from os import mkdir
@@ -296,7 +296,7 @@ class MainWindow(QMainWindow):
 
 	def sendMessage(self,message):
 		if viewing is None or not message: return
-		time = datetime.utcnow().timestamp()
+		time = datetime.now(timezone.utc)
 		addr = list(messages.keys())[viewing]
 		data = {
 			"addr":myaddr,
@@ -350,6 +350,7 @@ class MainWindow(QMainWindow):
 
 if __name__=="__main__":
 	qapp = QApplication(argv)
+	qapp.setStyle("Fusion")
 	window = MainWindow()
 	qapp.exec()
 	if myaddr is not None: window.backup()
