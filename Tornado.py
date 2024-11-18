@@ -350,6 +350,7 @@ class MainWindow(QMainWindow):
 
 if __name__=="__main__":
 	qapp = QApplication(argv)
+	qapp.setStyle("Fusion")
 	window = MainWindow()
 	qapp.exec()
 	if myaddr is not None: window.backup()
