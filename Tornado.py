@@ -8,11 +8,11 @@ from socketserver import TCPServer
 from gevent.pywsgi import WSGIServer
 from threading import Thread
 from requests import get,post
-from datetime import datetime, timezone
 from time import sleep
 from os.path import expanduser,exists
 from os import mkdir
 from json import loads,dumps
+import datetime
 
 window = None
 myaddr = None
@@ -279,7 +279,7 @@ class MainWindow(QMainWindow):
 				text = QLabel(messages[key][j]["content"])
 				text.setWordWrap(True)
 				layout.addWidget(text)
-				ts = datetime.fromtimestamp(float(messages[key][j]["time"]))
+				ts = datetime.datetime.fromtimestamp(float(messages[key][j]["time"]))
 				time = QLabel(ts.strftime("%Y-%m-%d %H:%M")+" (UTC)")
 				time.setStyleSheet("color:#888888")
 				layout.addWidget(time)
@@ -296,7 +296,7 @@ class MainWindow(QMainWindow):
 
 	def sendMessage(self,message):
 		if viewing is None or not message: return
-		time = datetime.now(timezone.utc)
+		time = datetime.datetime.now(datetime.timezone.utc)
 		addr = list(messages.keys())[viewing]
 		data = {
 			"addr":myaddr,
